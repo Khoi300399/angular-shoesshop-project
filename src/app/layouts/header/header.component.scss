@@ -1,0 +1,332 @@
+@import "/src/scss/helpers/variables";
+@import "/src/scss/helpers/mixins";
+
+.header {
+  height: 90px;
+  .overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    visibility: hidden;
+    opacity: 0;
+    transition: all ease 0.1s;
+  }
+  .overlay.active {
+    visibility: visible;
+    opacity: 1;
+    z-index: 10;
+  }
+  .logo {
+    display: block;
+    @include size(100%);
+    img {
+      width: 100px;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__action {
+    padding-inline: 10px;
+    margin: 0;
+    @include flexBox(center, flex-end);
+    gap: 20px;
+    &-item {
+      cursor: pointer;
+      @include flexBox(center);
+      gap: 5px;
+      font-weight: 600;
+      i {
+        font-size: 2rem;
+        transition: all 0.2s;
+        &:hover {
+          color: $green;
+        }
+      }
+      sup {
+        @include flexBox(center, center);
+        @include size(15px);
+        @include text(1.2rem, normal, $white);
+        border-radius: 100%;
+        background-color: #f67280;
+      }
+    }
+  }
+  .avatar {
+    @include size(25px);
+    border-radius: 100%;
+    img {
+      border-radius: inherit;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .bars {
+    overflow: hidden;
+    display: inline-block;
+    @include size(20px);
+    position: relative;
+    &-item {
+      position: absolute;
+      display: inline-block;
+      @include size(100%, 2px);
+      background: $black;
+      transition: all linear 0.3s;
+    }
+    &-item:nth-child(2) {
+      top: 7px;
+    }
+    &-item:last-child {
+      top: 14px;
+    }
+  }
+
+  .bars.active {
+    background: $red;
+    border-radius: 100%;
+    padding: 5px;
+    z-index: 99;
+    .bars-item {
+      width: 60%;
+      background: $white;
+    }
+    .bars-item:first-child,
+    .bars-item:last-child {
+      top: 50%;
+      left: 50%;
+    }
+    .bars-item:first-child {
+      transform: translateX(-50%) rotate(135deg);
+    }
+    .bars-item:nth-child(2) {
+      visibility: hidden;
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    .bars-item:last-child {
+      transform: translateX(-50%) rotate(-135deg);
+    }
+  }
+  .navbar.active {
+    transform: translateX(0);
+  }
+  .navbar {
+    @include flexBox(stretch, flex-start, column);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    padding: 0;
+    background: $white;
+    z-index: 99;
+    transform: translateX(-100%);
+    transition: all ease 0.5s;
+
+    &-list {
+      padding: 0;
+      margin: 0;
+    }
+    &-item:hover {
+      background: #e5e5e5;
+    }
+    &-item {
+      list-style-type: none;
+      padding: 5px 20px;
+      border-bottom: 1px solid #eee;
+      transition: all 0.3s;
+      @include flexBox(center, space-between);
+      a {
+        text-transform: uppercase;
+        color: $black;
+        text-decoration: none;
+        @include text(1.6rem, 600, $black);
+      }
+    }
+    &-search {
+      padding-block: 15px;
+      input {
+        height: 40px;
+        padding-inline: 20px;
+        outline: none;
+        border: 1px solid transparent;
+        background: #e8e8e8;
+      }
+      input::placeholder {
+        font-family: $secondary-font;
+        color: #cecece;
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
+
+@include minWidth(767.98px) {
+  .header {
+    .logo {
+      img {
+        width: 120px;
+      }
+    }
+    &__action {
+      gap: 30px;
+      &-item {
+        @include flexBox(center);
+        gap: 10px;
+        font-weight: 600;
+        i {
+          font-size: 3rem;
+        }
+        sup {
+          @include flexBox(center, center);
+          @include size(25px);
+          @include text(1.8rem, normal, $white);
+          border-radius: 100%;
+          background-color: #f67280;
+        }
+      }
+    }
+    .avtar {
+      @include size(35px);
+    }
+    .bars {
+      @include size(30px);
+
+      &-item:nth-child(2) {
+        top: 10px;
+      }
+      &-item:last-child {
+        top: 20px;
+      }
+    }
+    .navbar {
+      width: 350px;
+    }
+  }
+}
+@include minWidth(991.98px) {
+  .header {
+    .logo {
+      img {
+        width: 150px;
+      }
+    }
+    &__action {
+      gap: 30px;
+      &-item {
+        @include flexBox(center);
+        gap: 5px;
+        font-weight: 600;
+        i {
+          font-size: 3rem;
+        }
+        sup {
+          @include flexBox(center, center);
+          @include size(25px);
+          @include text(1.8rem, normal, $white);
+          border-radius: 100%;
+          background-color: #f67280;
+        }
+      }
+    }
+    .avatar {
+      @include size(40px);
+    }
+    .bars {
+      @include size(35px);
+    }
+    .navbar {
+      width: 550px;
+      &-item {
+        padding: 20px 25px;
+        a {
+          font-size: 3rem;
+        }
+      }
+      &-search {
+        padding-block: 30px;
+        input {
+          height: 60px;
+          width: 60%;
+          font-size: 2rem;
+        }
+        input::placeholder {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}
+
+@include minWidth(1199.98px) {
+  .header {
+    .overlay {
+      display: none;
+    }
+    &__action {
+      gap: 15px;
+      &-item:last-child {
+        display: none;
+      }
+      .avatar {
+        @include size(50px);
+      }
+    }
+    .navbar {
+      position: unset;
+      width: 100%;
+      background: transparent;
+      z-index: 0;
+      transform: translateX(0);
+      &-list {
+        @include flexBox(center, space-around, row);
+        padding: 0;
+        margin: 0;
+      }
+      &-item:hover,
+      &-item.active {
+        background: transparent;
+        a {
+          color: $white;
+          &::before {
+            width: 150%;
+          }
+        }
+      }
+      &-item {
+        display: inline-block;
+        list-style-type: none;
+        padding: 0;
+        border-bottom: none;
+        vertical-align: middle;
+        a {
+          position: relative;
+          margin-right: 5px;
+          font-size: 2rem;
+          transition: all ease 0.25s;
+          font-weight: 800;
+          &::before {
+            content: "";
+            position: absolute;
+            @include absoluteCenter("both");
+            height: 150%;
+            width: 0%;
+            border-radius: 25px;
+            background: $green;
+            z-index: -1;
+            transition: all ease 0.25s;
+          }
+        }
+        i {
+          display: none;
+        }
+      }
+      &-search {
+        display: none;
+      }
+    }
+  }
+}

@@ -26,6 +26,7 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "src/styles.scss",
+              "./src/assets/fonts/stylesheet.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [
@@ -58,7 +59,6 @@
               "namedChunks": true
             }
           },
-          "pug": "src/pug-loader.config.js",
           "defaultConfiguration": "production"
         },
         "serve": {
