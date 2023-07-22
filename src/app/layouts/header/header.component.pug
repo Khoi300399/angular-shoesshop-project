@@ -1,1 +1,53 @@
-p đây là header nà
+header.header 
+    div.overlay([class.active]="isActive",(click)="toggleSidebar()") 
+    div.container.h-100 
+        div.row.h-100.px-3.align-items-center
+            div.col-4.col-xl-2 
+                a(href="#!").logo
+                    img(src="./assets/images/logo.png", alt="logo")
+            div.col.col-xl-7
+                nav.navbar([class.active]="isActive")
+                    div.navbar-search 
+                        input(type="text" placeholder="Search Product...")
+                    ul.navbar-list 
+                        li.navbar-item
+                            a(href="#!") Home
+                            i(class="fa-solid fa-angle-down")
+                            
+                        li.navbar-item
+                            a(href="#!") Men
+                            i(class="fa-solid fa-angle-down")
+                            
+                        li.navbar-item
+                            a(href="#!") Women
+                            i(class="fa-solid fa-angle-down")
+                            
+                        li.navbar-item
+                            a(href="#!") Kids
+                            i(class="fa-solid fa-angle-down")
+                            
+                        li.navbar-item
+                            a(href="#!") News
+                            i(class="fa-solid fa-angle-down")
+                            
+                        li.navbar-item
+                            a(href="#!") Contact
+                            i(class="fa-solid fa-angle-down")                     
+            div.col-7.col-xl-3
+                ul.header__action
+                    li.header__action-item 
+                        span.heart 
+                            i(class="bi bi-heart")
+                        sup 2
+                    li.header__action-item 
+                        span.cart 
+                            i(class="bi bi-cart3")
+                        sup 2
+                    li.header__action-item 
+                        div.avatar 
+                            img(src="https://fastly.picsum.photos/id/1/200/300.jpg?hmac=jH5bDkLr6Tgy3oAg5khKCHeunZMHq0ehBZr6vGifPLY", alt="avatar")
+                    li.header__action-item
+                        span.bars([class.active]="isActive",(click)="toggleSidebar()")
+                            span.bars-item
+                            span.bars-item
+                            span.bars-item
