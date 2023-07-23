@@ -1,0 +1,73 @@
+@import "/src/scss/helpers/variables";
+@import "/src/scss/helpers/mixins";
+
+.carousel {
+  &__content {
+    @include flexBox(center, center);
+    padding: 70px 15px 20px;
+    font-family: $secondary-font;
+    background: url("../../../assets/images/carousel.webp") no-repeat center
+      right/cover;
+    .name {
+      @include text(3rem, 700, $black);
+    }
+    .decs {
+      @include text(1.2rem, 400, $black);
+      line-height: 1.6;
+      margin-block: 10px;
+    }
+    .left {
+      display: inline;
+    }
+    .right {
+      display: none;
+      img {
+        // transform: rotate(-20deg);
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .btn-prev {
+    background: #000;
+  }
+}
+
+@include minWidth(767.98px) {
+  .carousel {
+    &__content {
+      padding-block: 120px 30px;
+
+      .name {
+        font-size: 7.2rem;
+      }
+      .decs {
+        font-size: 1.6rem;
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+
+@include minWidth(991.98px) {
+  .carousel {
+    &__content {
+      padding-block: 150px 50px;
+    }
+  }
+}
+@include minWidth(1199.98px) {
+  .carousel {
+    &__content {
+      .decs {
+        font-size: 2rem;
+      }
+      .right {
+        display: block;
+        width: 500px;
+      }
+    }
+  }
+}

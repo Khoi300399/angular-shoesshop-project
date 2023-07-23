@@ -1,3 +1,61 @@
+@import "ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
+@import "ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
+@import "~animate.css/animate.min.css";
+@import "./scss/helpers/mixins";
 @import "./scss/helpers/variables";
 @import "./scss/base/reset";
 @import "./scss/base/typography";
+
+.carousel {
+  &:hover .owl-prev,
+  &:hover .owl-next,
+  &:hover .owl-prev.disabled,
+  &:hover .owl-next.disabled {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+  .owl-nav .owl-prev {
+    display: none;
+  }
+  .owl-prev.disabled,
+  .owl-next.disabled {
+    opacity: 0;
+    visibility: 0;
+    transition: all ease 0.3s;
+  }
+  .owl-prev,
+  .owl-next {
+    @include size(50px);
+    @include flexBox(center, center);
+    background: #000 !important;
+    border-radius: 100% !important;
+    position: absolute;
+    top: 30%;
+    opacity: 0;
+    visibility: 0;
+    transform: translateY(100%);
+    transition: all ease 0.3s;
+    i {
+      @include text(3rem, normal, $white);
+    }
+  }
+  .owl-prev {
+    left: 0;
+    transform: translateX(-100%);
+  }
+  .owl-next {
+    right: 0;
+    transform: translateX(100%);
+  }
+  .owl-dot {
+    margin-inline: 10px;
+    @include size(50px, 5px);
+    span {
+      margin: 0 !important;
+      display: block;
+      width: 100% !important;
+      height: 100% !important;
+    }
+  }
+}

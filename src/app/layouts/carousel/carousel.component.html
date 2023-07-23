@@ -1,0 +1,25 @@
+
+<section class="carousel"> 
+  <div class="carousel__content">
+    <div class="container"> 
+      <owl-carousel-o [options]="owlCarousel">
+        <ng-template carouselSlide="carouselSlide" *ngFor="let prod of products"> 
+          <div class="slider">
+            <div class="row"> 
+              <div class="col-12 col-sm-8 col-lg-6 d-flex align-items-center">
+                <div class="left"> 
+                  <h1 class="name">{{prod.name}}</h1>
+                  <p class="decs">{{prod.description}}</p>
+                  <app-button [text]="'Shop Now'"></app-button>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="right"> <img [src]="prod.image" alt="product"/></div>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+  </div>
+</section>

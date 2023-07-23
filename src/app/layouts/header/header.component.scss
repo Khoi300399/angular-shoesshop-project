@@ -3,6 +3,11 @@
 
 .header {
   height: 90px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
   .overlay {
     position: fixed;
     top: 0;
@@ -42,7 +47,7 @@
         font-size: 2rem;
         transition: all 0.2s;
         &:hover {
-          color: $green;
+          color: $red;
         }
       }
       sup {
@@ -54,16 +59,7 @@
       }
     }
   }
-  .avatar {
-    @include size(25px);
-    border-radius: 100%;
-    img {
-      border-radius: inherit;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
+
   .bars {
     overflow: hidden;
     display: inline-block;
@@ -189,9 +185,7 @@
         }
       }
     }
-    .avtar {
-      @include size(35px);
-    }
+
     .bars {
       @include size(30px);
 
@@ -232,9 +226,7 @@
         }
       }
     }
-    .avatar {
-      @include size(40px);
-    }
+
     .bars {
       @include size(35px);
     }
@@ -271,9 +263,6 @@
       &-item:last-child {
         display: none;
       }
-      .avatar {
-        @include size(50px);
-      }
     }
     .navbar {
       position: unset;
@@ -292,7 +281,7 @@
         a {
           color: $white;
           &::before {
-            width: 150%;
+            @include size(150%);
           }
         }
       }
@@ -312,12 +301,11 @@
             content: "";
             position: absolute;
             @include absoluteCenter("both");
-            height: 150%;
-            width: 0%;
+            @include size(0);
             border-radius: 25px;
-            background: $green;
+            background: $red;
             z-index: -1;
-            transition: all ease 0.25s;
+            transition: all ease 0.3s;
           }
         }
         i {

@@ -1,0 +1,57 @@
+@import "/src/scss/helpers/variables";
+@import "/src/scss/helpers/mixins";
+
+.button {
+  a {
+    height: auto;
+    display: inline-block;
+    font-family: $secondary-font;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 35px;
+    padding: 6px 12px;
+    text-align: center;
+    line-height: 10px;
+    opacity: 1;
+    background: $black;
+    @include text(0.7rem, 600, $white);
+    transition: all linear 0.3s;
+    &:hover {
+      background: $red;
+    }
+    &:before {
+      content: "";
+      display: inline-block;
+      @include absoluteCenter("both");
+      @include size(calc(100% + 12px));
+      background-color: rgba(0, 0, 0, 0.07);
+      border-radius: inherit;
+    }
+  }
+}
+
+@include minWidth(767.98px) {
+  .button {
+    a {
+      padding: 15px 25px;
+      font-size: 1.5rem;
+    }
+  }
+}
+@include minWidth(1199.98px) {
+  .button {
+    a {
+      padding: 20px 30px;
+      font-size: 1.8rem;
+    }
+  }
+}
+@include minWidth(1399.98px) {
+  .button {
+    a {
+      padding: 25px 40px;
+      font-size: 2rem;
+    }
+  }
+}

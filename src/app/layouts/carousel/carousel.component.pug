@@ -1,0 +1,15 @@
+section.carousel 
+    div.carousel__content
+        div.container 
+            owl-carousel-o([options]= "owlCarousel")
+                ng-template(carouselSlide, *ngFor="let prod of products") 
+                    div.slider
+                        div.row 
+                            div.col-12.col-sm-8.col-lg-6.d-flex.align-items-center
+                                div.left 
+                                    h1.name {{prod.name}}
+                                    p.decs {{prod.description}}
+                                    app-button([text]="'Shop Now'")
+                            div.col-12.col-lg-6
+                                div.right 
+                                    img([src]="prod.image", alt="product")
