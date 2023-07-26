@@ -1,0 +1,12 @@
+
+<section class="brand"> 
+  <div class="container"> 
+    <owl-carousel-o [options]="owlBrand">
+      <ng-template carouselSlide="carouselSlide" *ngFor="let image of images">
+        <div class="brand-item">
+          <div class="thumb"><img [src]="image" alt="brand"/></div>
+        </div>
+      </ng-template>
+    </owl-carousel-o>
+  </div>
+</section>

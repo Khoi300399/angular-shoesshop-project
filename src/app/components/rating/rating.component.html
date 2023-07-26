@@ -1,0 +1,2 @@
+
+<div class="rating"><span *ngFor="let star of stars; index as i" (click)="onRate(i)" (mouseenter)="onHover(i)" (mouseout)="onMouseLeave()"><i class="bx bxs-star star-icon" [class]="{'full':i &lt; rating,'hovered':i &lt; hoverRating}"></i></span></div>

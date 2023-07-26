@@ -1,0 +1,6 @@
+section.features 
+    div.container 
+        app-heading([mask]="'features'",[text]="'- Features Products'")
+        div.row 
+            div.col-12.col-md-6.col-lg-4.col-xl-3.mb-4(*ngFor="let prod of products") 
+                product-card([prod]="prod")

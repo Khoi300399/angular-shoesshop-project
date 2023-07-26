@@ -1,0 +1,7 @@
+section.brand 
+    div.container 
+        owl-carousel-o([options]= "owlBrand")
+            ng-template(carouselSlide, *ngFor="let image of images")
+                    div.brand-item
+                        div.thumb
+                            img([src]="image", alt="brand")

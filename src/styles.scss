@@ -1,10 +1,11 @@
 @import "ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
-@import "ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
-@import "~animate.css/animate.min.css";
 @import "./scss/helpers/mixins";
 @import "./scss/helpers/variables";
 @import "./scss/base/reset";
 @import "./scss/base/typography";
+@import "ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
+@import "~animate.css/animate.min.css";
+@import "../node_modules/boxicons/css/boxicons.min.css";
 
 .carousel {
   &:hover .owl-prev,

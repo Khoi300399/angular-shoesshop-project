@@ -1,0 +1,23 @@
+div.product-card 
+    div.thumb 
+        img([src]="prod.image", [alt]="prod.name")
+        div.action
+            ul.action-list
+                li.action-item
+                    i.acticon-icon(class='bx bx-cart-alt')
+                li.action-item
+                    i.acticon-icon(class='bx bx-move')
+                li.action-item
+                    i.acticon-icon(class='bx bx-heart')
+    div.content 
+        h3.name {{prod.name}}
+        div.info
+            div.price 
+                span {{'$'+prod.price}}
+                del {{'$'+(prod.price + 200)}}
+            div.rated
+                span(*ngFor="let star of stars; index as i")
+                    i( class='bx bxs-star star-icon',[class.full]="i < rating")
+        div.size
+            ul
+                li(*ngFor="let size of sizes") {{size}}

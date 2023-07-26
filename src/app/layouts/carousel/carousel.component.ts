@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { AppService } from '../../services/app.service';
+import { Product } from '../../../global/types';
 
 @Component({
   selector: 'app-carousel',
@@ -8,7 +9,7 @@ import { AppService } from '../../services/app.service';
   styleUrls: ['./carousel.component.scss'],
 })
 export class CarouselComponent implements OnInit {
-  products: any;
+  products!: Product[];
   constructor(private app: AppService) {}
   ngOnInit(): void {
     this.app.products().subscribe((result: any) => {
@@ -17,6 +18,7 @@ export class CarouselComponent implements OnInit {
     });
   }
   owlCarousel: OwlOptions = {
+    loop: true,
     items: 1,
     margin: 10,
     mouseDrag: true,

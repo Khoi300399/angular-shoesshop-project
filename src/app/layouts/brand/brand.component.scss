@@ -1,0 +1,19 @@
+@import "/src/scss/helpers/variables";
+@import "/src/scss/helpers/mixins";
+
+.brand {
+  padding-top: 80px;
+  margin-inline: 17px;
+  &-item {
+    height: 100%;
+    @include flexBox(center, center);
+  }
+  .thumb {
+    padding: 15px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

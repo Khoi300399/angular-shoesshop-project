@@ -1,0 +1,125 @@
+@import "/src/scss/helpers/variables";
+@import "/src/scss/helpers/mixins";
+.product-card {
+  padding: 15px;
+  box-shadow: 0 0 45px rgba(0, 0, 0, 0.07);
+  border-radius: 15px;
+  transition: transform ease 0.3s;
+  &:hover {
+    transform: translateY(-10px);
+  }
+  &:hover .thumb img {
+    transform: scale(1.1);
+  }
+  &:hover .name {
+    color: $red;
+  }
+  &:hover .action {
+    opacity: 1;
+    visibility: visible;
+    &-item {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .thumb {
+    position: relative;
+    background: #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform ease 0.3s;
+    }
+  }
+  .action {
+    @include absoluteCenter("left");
+    bottom: 0;
+    opacity: 0;
+    visibility: hidden;
+    &-list {
+      @include flexBox(center, center);
+      gap: 10px;
+    }
+    &-item {
+      @include flexBox(center, center);
+      @include size(35px);
+      border-radius: 50%;
+      background: $white;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      &:hover {
+        background: $red;
+        border-radius: 35px;
+        width: 70px;
+        i {
+          color: #f0f0f0;
+        }
+      }
+      &:first-child {
+        transition: all ease 0.2s;
+      }
+      &:nth-child(2) {
+        transition: all ease 0.4s;
+      }
+      &:last-child {
+        transition: all ease 0.6s;
+      }
+    }
+    &-icon {
+      @include text(2rem, 900, $title-color);
+    }
+  }
+  .content {
+    padding: 15px 10px 10px;
+  }
+  .name {
+    @include text(2.2rem, 700, $black);
+    transition: color ease 0.3s;
+  }
+  .info {
+    @include flexBox(center, space-between);
+    margin-block: 15px;
+  }
+  .price {
+    span {
+      margin-right: 5px;
+      @include text(2rem, 700, $red);
+    }
+    del {
+      @include text(1.6rem, normal, $text-color);
+    }
+  }
+  .rated {
+    i {
+      color: $black;
+      &.full {
+        color: $red;
+      }
+    }
+  }
+  .size {
+    ul {
+      padding: 0;
+      margin: 0;
+      @include flexBox(center);
+      gap: 5px;
+      li {
+        cursor: pointer;
+        padding: 5px;
+        border-radius: 8px;
+        @include size(30px);
+        @include flexBox(center, center);
+        @include text(2rem, 700, $text-color);
+      }
+      li.active {
+        background: #808080;
+        color: $black;
+      }
+    }
+  }
+}

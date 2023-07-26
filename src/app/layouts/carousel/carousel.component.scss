@@ -2,9 +2,11 @@
 @import "/src/scss/helpers/mixins";
 
 .carousel {
+  overflow: hidden;
   &__content {
+    overflow: hidden;
     @include flexBox(center, center);
-    padding: 70px 15px 20px;
+    padding: 80px 15px 30px;
     font-family: $secondary-font;
     background: url("../../../assets/images/carousel.webp") no-repeat center
       right/cover;
@@ -18,6 +20,7 @@
     }
     .left {
       display: inline;
+      padding-left: 10px;
     }
     .right {
       display: none;

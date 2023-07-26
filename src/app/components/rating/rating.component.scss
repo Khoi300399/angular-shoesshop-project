@@ -1,0 +1,21 @@
+@import "/src/scss/helpers/variables";
+@import "/src/scss/helpers/mixins";
+.rating {
+  @include flexBox(center);
+  gap: 2px;
+}
+
+.star-icon {
+  font-size: 24px;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.star-icon.full {
+  color: #f4d03f;
+}
+
+/* Thêm class "hovered" để đổi màu sắc khi di chuột qua */
+.star-icon.hovered {
+  color: #f4d03f;
+}

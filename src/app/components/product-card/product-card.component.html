@@ -1,0 +1,26 @@
+
+<div class="product-card"> 
+  <div class="thumb"> <img [src]="prod.image" [alt]="prod.name"/>
+    <div class="action">
+      <ul class="action-list">
+        <li class="action-item"><i class="acticon-icon bx bx-cart-alt"></i></li>
+        <li class="action-item"><i class="acticon-icon bx bx-move"></i></li>
+        <li class="action-item"><i class="acticon-icon bx bx-heart"></i></li>
+      </ul>
+    </div>
+  </div>
+  <div class="content"> 
+    <h3 class="name">{{prod.name}}</h3>
+    <div class="info">
+      <div class="price"> <span>{{'$'+prod.price}}</span>
+        <del>{{'$'+(prod.price + 200)}}</del>
+      </div>
+      <div class="rated"><span *ngFor="let star of stars; index as i"><i class="bx bxs-star star-icon" [class.full]="i &lt; rating"></i></span></div>
+    </div>
+    <div class="size">
+      <ul>
+        <li *ngFor="let size of sizes">{{size}}</li>
+      </ul>
+    </div>
+  </div>
+</div>

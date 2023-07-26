@@ -5,6 +5,6 @@ const baseUrl = 'https://shop.cyberlearn.vn/api';
 export class AppService {
   constructor(private http: HttpClient) {}
   products() {
-    return this.http.get<any>(`${baseUrl}/Product`);
+    return this.http.get(`${baseUrl}/Product`);
   }
 }

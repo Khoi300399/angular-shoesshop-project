@@ -13,6 +13,13 @@ import { CarouselComponent } from './layouts/carousel/carousel.component';
 import { ButtonComponent } from './components/button/button.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { HeadingComponent } from './components/heading/heading.component';
+import { FeaturesComponent } from './layouts/features/features.component';
+import { ProductCardComponent } from './components/product-card/product-card.component';
+import { RatingComponent } from './components/rating/rating.component';
+import { BrandComponent } from './layouts/brand/brand.component';
+import { BannerComponent } from './layouts/banner/banner.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +30,12 @@ import { HttpClientModule } from '@angular/common/http';
     DetailComponent,
     CarouselComponent,
     ButtonComponent,
+    HeadingComponent,
+    FeaturesComponent,
+    ProductCardComponent,
+    RatingComponent,
+    BrandComponent,
+    BannerComponent,
   ],
   imports: [
     BrowserModule,
